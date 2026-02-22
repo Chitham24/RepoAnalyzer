@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "repo_name": "Hello-World",
+    "owner": "octocat",
+    "branch": "main",
+    "description": "My first repository on GitHub!",
+    "language": null,
+    "stars": 3481
+  },
+  "overview": {
+    "purpose": null,
+    "architecture": null,
+    "summary": "Error generating architecture summary: Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]"
+  },
+  "tech_stack": {
+    "languages": [],
+    "frameworks": [],
+    "databases": [],
+    "infrastructure": [],
+    "primary_language": null,
+    "total_files": 0
+  },
+  "structure": {
+    "folders": [],
+    "folder_summaries": [],
+    "total_folders": 0
+  },
+  "entry_points": {
+    "application_files": [],
+    "framework_entrypoints": [],
+    "docker_entrypoints": [],
+    "total_entrypoints": 0
+  },
+  "execution_flow": {
+    "description": "Error generating execution flow summary: Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]",
+    "entry_point": null,
+    "request_flow": null,
+    "key_interactions": null,
+    "stages": [],
+    "connections": []
+  },
+  "dependencies": {
+    "graph": {
+      "nodes": [],
+      "edges": {}
+    },
+    "total_nodes": 0,
+    "total_edges": 0
+  },
+  "key_insights": {
+    "architecture_pattern": "Modular application",
+    "tech_choices": null,
+    "key_modules": null
+  },
+  "file_summaries": [],
+  "diagrams": {
+    "dependency_diagram": "graph TD\n\n    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px",
+    "flow_diagram": "graph LR\n    Empty[No execution flow detected]",
+    "module_diagram": "graph TD\n    Empty[No modules detected]"
+  }
+}

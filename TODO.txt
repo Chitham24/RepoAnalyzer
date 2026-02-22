@@ -1,0 +1,379 @@
+1. Project Structure
+repo_analyzer/
+│
+├── main.py                     # Entry point (CLI or API)
+├── config/
+│   ├── settings.py             # API keys, limits, flags
+│   └── constants.py            # Ignore dirs, extensions, thresholds
+│
+├── github/
+│   ├── client.py               # GitHub API wrapper
+│   ├── repo_loader.py          # Repo tree + file fetch logic
+│   └── filters.py              # Ignore rules, file filtering
+│
+├── analysis/
+│   ├── language_detector.py    # Detect languages per file
+│   ├── stack_detector.py       # Frameworks, DBs, infra detection
+│   ├── structure_analyzer.py   # Backend / frontend / config grouping
+│   └── entrypoint_finder.py    # main.py, app.js, server.ts, etc.
+│
+├── llm/
+│   ├── client.py               # LLM API abstraction (Groq/Gemini)
+│   ├── prompts.py              # Prompt templates
+│   ├── file_summarizer.py      # File-level summaries
+│   ├── folder_summarizer.py    # Folder/module-level summaries
+│   └── repo_summarizer.py      # Final repo overview
+│
+├── graph/
+│   ├── dependency_graph.py     # File-level dependency graph
+│   ├── flow_builder.py         # High-level execution flow
+│   └── diagram_generator.py    # Mermaid diagram text
+│
+├── output/
+│   ├── formatter.py            # Markdown / JSON formatting
+│   └── report_builder.py       # Final report assembly
+│
+├── utils/
+│   ├── logger.py               # Structured logging
+│   ├── cache.py                # Caching LLM responses
+│   └── helpers.py              # Shared helpers
+│
+├── README.md
+└── requirements.txt
+
+2️⃣ GitHub Ingestion Layer
+📁 github/client.py
+
+Purpose
+
+Wrap GitHub REST API
+
+Handle auth, rate limits, retries
+
+Responsibilities
+
+Fetch repo metadata
+
+Fetch repo tree (recursive)
+
+Fetch file contents
+
+📁 github/repo_loader.py
+
+Purpose
+
+Convert raw GitHub data into usable structures
+
+Responsibilities
+
+Load full file tree
+
+Store file path, size, extension, content
+
+Maintain folder hierarchy
+
+📁 github/filters.py
+
+Purpose
+
+Reduce noise
+
+Responsibilities
+
+Ignore directories (node_modules, .git, dist)
+
+Ignore binary files
+
+Allow only relevant extensions
+
+3️⃣ Static Analysis Layer (No LLM)
+📁 analysis/language_detector.py
+
+Purpose
+
+Detect languages used
+
+Responsibilities
+
+File extension → language mapping
+
+Repo-level language stats
+
+📁 analysis/stack_detector.py
+
+Purpose
+
+Identify tech stack
+
+Responsibilities
+
+Detect frameworks:
+
+FastAPI, Flask, Django
+
+React, Next.js, Vue
+
+Detect DBs:
+
+Postgres, MongoDB
+
+Detect infra:
+
+Docker, GitHub Actions, Terraform
+
+📁 analysis/structure_analyzer.py
+
+Purpose
+
+Classify repo structure
+
+Responsibilities
+
+Identify:
+
+Frontend folders
+
+Backend folders
+
+Config / infra folders
+
+Tag folders with roles
+
+📁 analysis/entrypoint_finder.py
+
+Purpose
+
+Identify execution entry points
+
+Responsibilities
+
+Detect:
+
+main.py, app.py
+
+server.js, index.ts
+
+Dockerfile CMD
+
+Map how app starts
+
+4️⃣ LLM Layer (Summarization Only)
+📁 llm/client.py
+
+Purpose
+
+Abstract LLM provider
+
+Responsibilities
+
+Switch between:
+
+Groq
+
+Gemini
+
+Local model
+
+Token + retry handling
+
+📁 llm/prompts.py
+
+Purpose
+
+Centralized prompts
+
+Contains
+
+File summary prompt
+
+Folder summary prompt
+
+Repo overview prompt
+
+Flow extraction prompt
+
+📁 llm/file_summarizer.py
+
+Purpose
+
+Summarize individual files
+
+Input
+
+File content + metadata
+
+Output
+
+What the file does
+
+Key responsibilities
+
+Dependencies mentioned
+
+📁 llm/folder_summarizer.py
+
+Purpose
+
+Summarize modules/folders
+
+Input
+
+Summaries of files in folder
+
+Output
+
+Module purpose
+
+How it interacts with others
+
+📁 llm/repo_summarizer.py
+
+Purpose
+
+Final repo explanation
+
+Output
+
+What the repo does
+
+Overall architecture
+
+High-level execution flow
+
+5️⃣ Graph & Flow Layer (Shallow, Not Deep)
+📁 graph/dependency_graph.py
+
+Purpose
+
+Build file-level dependency graph
+
+Responsibilities
+
+Parse imports/includes
+
+Create edges: file → file
+
+📁 graph/flow_builder.py
+
+Purpose
+
+High-level execution flow
+
+Responsibilities
+
+Entry point → services → DB / external APIs
+
+Use static analysis + LLM hints
+
+📁 graph/diagram_generator.py
+
+Purpose
+
+Convert flows into diagrams
+
+Output
+
+Mermaid graph text
+
+No rendering, just text
+
+6️⃣ Output & Reporting
+📁 output/formatter.py
+
+Purpose
+
+Output formatting
+
+Formats
+
+Markdown
+
+JSON (for future UI)
+
+📁 output/report_builder.py
+
+Purpose
+
+Assemble final report
+
+Contains
+
+Repo summary
+
+Structure breakdown
+
+Tech stack
+
+Flow diagrams
+
+Entry points
+
+7️⃣ Orchestration Layer
+📁 main.py
+
+Purpose
+
+Glue everything together
+
+Flow
+
+Parse GitHub URL
+
+Load repo
+
+Run static analysis
+
+Run LLM summaries
+
+Build graphs
+
+Generate report
+
+8️⃣ Config & Utils
+📁 config/settings.py
+
+LLM provider
+
+Token limits
+
+Max files per chunk
+
+📁 config/constants.py
+
+Ignored dirs
+
+Supported languages
+
+File size limits
+
+📁 utils/cache.py
+
+Cache file summaries
+
+Cache folder summaries
+
+📁 utils/logger.py
+
+Debug-friendly logs
+
+9️⃣ Build Order (important)
+
+Recommended implementation order
+
+GitHub ingestion
+
+File filtering
+
+Language + stack detection
+
+Folder classification
+
+File summaries
+
+Folder summaries
+
+Repo summary
+
+Flow diagrams
+
+Final report

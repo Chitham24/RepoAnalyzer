@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "repo_name": "Footballer_Classifier",
+    "owner": "Chitham24",
+    "branch": "main",
+    "description": null,
+    "language": "Jupyter Notebook",
+    "stars": 0
+  },
+  "overview": {
+    "purpose": "* Classify footballers\n* Image classification",
+    "architecture": "* Microservices design\n* Modular components\n* API-centric",
+    "summary": "Project Purpose:\n* Classify footballers\n* Image classification\n\nArchitecture:\n* Microservices design\n* Modular components\n* API-centric\n\nKey Modules:\n* ui\n* API endpoint\n* Image classifier\n* File uploader\n* Data processor\n* Database connector\n\nTechnology Choices:\n* Express framework\n* Vue library\n* PostgreSQL database\n\nModule Details:\nFolder: ui\nRole: frontend\nModule Purpose:\n- Handles UI functionality\n- Manages user interactions\n\nKey Components:\n- Dropzone\n- jQuery\n- API endpoint\n- Image classification\n- File uploads\n\nInteractions:\n- Sends image data\n- Handles upload events \n\nFile Summaries:\n File: ui/app.js\nPurpose:\n* Handles file uploads and image classification\n\nResponsibilities:\n* Initializes Dropzone\n* Handles file upload events\n* Sends image data to API\n\nKey Dependencies:\n* Dropzone\n* jQuery\n* API endpoint"
+  },
+  "tech_stack": {
+    "languages": [
+      {
+        "language": "XML",
+        "files": 34,
+        "lines": 510644,
+        "percentage": 80.95
+      },
+      {
+        "language": "Python",
+        "files": 3,
+        "lines": 121,
+        "percentage": 7.14
+      },
+      {
+        "language": "JSON",
+        "files": 2,
+        "lines": 2,
+        "percentage": 4.76
+      },
+      {
+        "language": "JavaScript",
+        "files": 2,
+        "lines": 132,
+        "percentage": 4.76
+      },
+      {
+        "language": "Markdown",
+        "files": 1,
+        "lines": 5,
+        "percentage": 2.38
+      }
+    ],
+    "frameworks": [
+      "Express",
+      "Flask",
+      "Koa",
+      "Vue"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Redis"
+    ],
+    "infrastructure": [],
+    "primary_language": "XML",
+    "total_files": 42
+  },
+  "structure": {
+    "folders": [
+      {
+        "folder": "server",
+        "role": "backend",
+        "file_count": 22
+      },
+      {
+        "folder": "ui",
+        "role": "frontend",
+        "file_count": 2
+      },
+      {
+        "folder": "model",
+        "role": "misc",
+        "file_count": 19
+      }
+    ],
+    "folder_summaries": [
+      {
+        "folder": "ui",
+        "role": "frontend",
+        "purpose": "- Handles UI functionality\n- Manages user interactions",
+        "key_components": "- Dropzone\n- jQuery\n- API endpoint\n- Image classification\n- File uploads",
+        "interactions": "- Sends image data\n- Handles upload events",
+        "summary": "Module Purpose:\n- Handles UI functionality\n- Manages user interactions\n\nKey Components:\n- Dropzone\n- jQuery\n- API endpoint\n- Image classification\n- File uploads\n\nInteractions:\n- Sends image data\n- Handles upload events \n\nFile Summaries:\n File: ui/app.js\nPurpose:\n* Handles file uploads and image classification\n\nResponsibilities:\n* Initializes Dropzone\n* Handles file upload events\n* Sends image data to API\n\nKey Dependencies:\n* Dropzone\n* jQuery\n* API endpoint"
+      }
+    ],
+    "total_folders": 3
+  },
+  "entry_points": {
+    "application_files": [
+      {
+        "path": "ui/app.js",
+        "type": "JavaScript",
+        "filename": "app.js"
+      }
+    ],
+    "framework_entrypoints": [
+      {
+        "path": "server/server.py",
+        "framework": "Flask"
+      }
+    ],
+    "docker_entrypoints": [],
+    "total_entrypoints": 2
+  },
+  "execution_flow": {
+    "description": "Entry Point:\n- app.js\n\nRequest Flow:\n1. Client sends request\n2. Server receives request\n3. Route handler executes\n\nKey Interactions:\n- Express handles HTTP\n- Koa handles errors\n- Vue renders UI\n- Flask provides API\n\nEntry Files:\n- ui/app.js (JavaScript)\n\nRelevant Modules:",
+    "entry_point": "- app.js",
+    "request_flow": "1. Client sends request\n2. Server receives request\n3. Route handler executes",
+    "key_interactions": "- Express handles HTTP\n- Koa handles errors\n- Vue renders UI\n- Flask provides API",
+    "stages": [
+      {
+        "id": "entry",
+        "type": "entry_point",
+        "components": [
+          "ui/app.js",
+          "server/server.py"
+        ],
+        "description": "Application entry points"
+      },
+      {
+        "id": "frontend",
+        "type": "frontend",
+        "components": [
+          "ui"
+        ],
+        "description": "Frontend/UI layer"
+      },
+      {
+        "id": "database",
+        "type": "database",
+        "components": [
+          "PostgreSQL",
+          "Redis"
+        ],
+        "description": "Data persistence layer"
+      },
+      {
+        "id": "external",
+        "type": "external_services",
+        "components": [
+          "Redis (caching/queue)"
+        ],
+        "description": "External services and infrastructure"
+      }
+    ],
+    "connections": [
+      {
+        "from": "entry",
+        "to": "frontend",
+        "label": "Renders UI"
+      },
+      {
+        "from": "entry",
+        "to": "database",
+        "label": "Data operations"
+      }
+    ]
+  },
+  "dependencies": {
+    "graph": {
+      "nodes": [
+        "README.md",
+        "model/class_dictionary.json",
+        "model/opencv/haarcascades/haarcascade_eye.xml",
+        "model/opencv/haarcascades/haarcascade_eye_tree_eyeglasses.xml",
+        "model/opencv/haarcascades/haarcascade_frontalcatface.xml",
+        "model/opencv/haarcascades/haarcascade_frontalcatface_extended.xml",
+        "model/opencv/haarcascades/haarcascade_frontalface_alt.xml",
+        "model/opencv/haarcascades/haarcascade_frontalface_alt2.xml",
+        "model/opencv/haarcascades/haarcascade_frontalface_default.xml",
+        "model/opencv/haarcascades/haarcascade_fullbody.xml",
+        "model/opencv/haarcascades/haarcascade_lefteye_2splits.xml",
+        "model/opencv/haarcascades/haarcascade_licence_plate_rus_16stages.xml",
+        "model/opencv/haarcascades/haarcascade_lowerbody.xml",
+        "model/opencv/haarcascades/haarcascade_profileface.xml",
+        "model/opencv/haarcascades/haarcascade_righteye_2splits.xml",
+        "model/opencv/haarcascades/haarcascade_russian_plate_number.xml",
+        "model/opencv/haarcascades/haarcascade_smile.xml",
+        "model/opencv/haarcascades/haarcascade_upperbody.xml",
+        "model/requirements.txt",
+        "server/artifacts/class_dictionary.json",
+        "server/b64.txt",
+        "server/opencv/haarcascades/haarcascade_eye.xml",
+        "server/opencv/haarcascades/haarcascade_eye_tree_eyeglasses.xml",
+        "server/opencv/haarcascades/haarcascade_frontalcatface.xml",
+        "server/opencv/haarcascades/haarcascade_frontalcatface_extended.xml",
+        "server/opencv/haarcascades/haarcascade_frontalface_alt.xml",
+        "server/opencv/haarcascades/haarcascade_frontalface_alt2.xml",
+        "server/opencv/haarcascades/haarcascade_frontalface_default.xml",
+        "server/opencv/haarcascades/haarcascade_fullbody.xml",
+        "server/opencv/haarcascades/haarcascade_lefteye_2splits.xml",
+        "server/opencv/haarcascades/haarcascade_licence_plate_rus_16stages.xml",
+        "server/opencv/haarcascades/haarcascade_lowerbody.xml",
+        "server/opencv/haarcascades/haarcascade_profileface.xml",
+        "server/opencv/haarcascades/haarcascade_righteye_2splits.xml",
+        "server/opencv/haarcascades/haarcascade_russian_plate_number.xml",
+        "server/opencv/haarcascades/haarcascade_smile.xml",
+        "server/opencv/haarcascades/haarcascade_upperbody.xml",
+        "server/server.py",
+        "server/util.py",
+        "server/wavelet.py",
+        "ui/app.js",
+        "ui/dropzone.min.js"
+      ],
+      "edges": {
+        "server/server.py": [
+          "server/util.py"
+        ],
+        "server/util.py": [
+          "server/wavelet.py"
+        ]
+      }
+    },
+    "total_nodes": 42,
+    "total_edges": 2
+  },
+  "key_insights": {
+    "architecture_pattern": "Full-stack web application (Frontend + Backend)",
+    "tech_choices": "* Express framework\n* Vue library\n* PostgreSQL database",
+    "key_modules": "* ui\n* API endpoint\n* Image classifier\n* File uploader\n* Data processor\n* Database connector"
+  },
+  "file_summaries": [
+    {
+      "path": "ui/app.js",
+      "language": "JavaScript",
+      "purpose": "* Handles file uploads and image classification",
+      "responsibilities": "* Initializes Dropzone\n* Handles file upload events\n* Sends image data to API",
+      "dependencies": "* Dropzone\n* jQuery\n* API endpoint"
+    }
+  ],
+  "diagrams": {
+    "dependency_diagram": "graph TD\n    server_util_py[util.py]\n    server_server_py[server.py]\n    server_wavelet_py[wavelet.py]\n    README_md[README.md]\n    model_class_dictionary_json[class_dictionary.json]\n    model_opencv_haarcascades_haarcascade_eye_xml[haarcascade_eye.xml]\n    model_opencv_haarcascades_haarcascade_eye_tree_eyeglasses_xml[haarcascade_eye_tree_eyegla...]\n    model_opencv_haarcascades_haarcascade_frontalcatface_xml[haarcascade_frontalcatface.xml]\n    model_opencv_haarcascades_haarcascade_frontalcatface_extended_xml[haarcascade_frontalcatface_...]\n    model_opencv_haarcascades_haarcascade_frontalface_alt_xml[haarcascade_frontalface_alt...]\n    model_opencv_haarcascades_haarcascade_frontalface_alt2_xml[haarcascade_frontalface_alt...]\n    model_opencv_haarcascades_haarcascade_frontalface_default_xml[haarcascade_frontalface_def...]\n    model_opencv_haarcascades_haarcascade_fullbody_xml[haarcascade_fullbody.xml]\n    model_opencv_haarcascades_haarcascade_lefteye_2splits_xml[haarcascade_lefteye_2splits...]\n    model_opencv_haarcascades_haarcascade_licence_plate_rus_16stages_xml[haarcascade_licence_plate_r...]\n    server_util_py --> server_wavelet_py\n    server_server_py --> server_util_py\n\n    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px",
+    "flow_diagram": "graph LR\n    entry[\"Application entry points\"]\n    frontend[\"Frontend/UI layer\"]\n    database[\"Data persistence layer\"]\n    external[\"External services and infrastructure\"]\n    entry -->|Renders UI| frontend\n    entry -->|Data operations| database\n\n    style entry fill:#e1f5e1,stroke:#4caf50,stroke-width:3px\n    style frontend fill:#e3f2fd,stroke:#2196f3,stroke-width:2px\n    style database fill:#fce4ec,stroke:#e91e63,stroke-width:2px\n    style external fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px",
+    "module_diagram": "graph TD\n    subgraph frontend[FRONTEND]\n        ui[ui]\n    end\n\n    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px"
+  }
+}

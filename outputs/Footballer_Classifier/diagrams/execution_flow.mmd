@@ -1,0 +1,12 @@
+graph LR
+    entry["Application entry points"]
+    frontend["Frontend/UI layer"]
+    database["Data persistence layer"]
+    external["External services and infrastructure"]
+    entry -->|Renders UI| frontend
+    entry -->|Data operations| database
+
+    style entry fill:#e1f5e1,stroke:#4caf50,stroke-width:3px
+    style frontend fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    style database fill:#fce4ec,stroke:#e91e63,stroke-width:2px
+    style external fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px

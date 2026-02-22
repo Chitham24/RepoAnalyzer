@@ -1,0 +1,18 @@
+graph TD
+    README_md[README.md]
+    llm_py[llm.py]
+    logger_py[logger.py]
+    main_py[main.py]
+    message_log_txt[message_log.txt]
+    requirements_txt[requirements.txt]
+    server_py[server.py]
+    tracker_py[tracker.py]
+    utils_py[utils.py]
+    main_py --> utils_py
+    server_py --> logger_py
+    server_py --> tracker_py
+    tracker_py --> logger_py
+    utils_py --> llm_py
+    utils_py --> tracker_py
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px

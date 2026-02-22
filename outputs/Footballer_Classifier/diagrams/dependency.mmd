@@ -1,0 +1,20 @@
+graph TD
+    server_util_py[util.py]
+    server_server_py[server.py]
+    server_wavelet_py[wavelet.py]
+    README_md[README.md]
+    model_class_dictionary_json[class_dictionary.json]
+    model_opencv_haarcascades_haarcascade_eye_xml[haarcascade_eye.xml]
+    model_opencv_haarcascades_haarcascade_eye_tree_eyeglasses_xml[haarcascade_eye_tree_eyegla...]
+    model_opencv_haarcascades_haarcascade_frontalcatface_xml[haarcascade_frontalcatface.xml]
+    model_opencv_haarcascades_haarcascade_frontalcatface_extended_xml[haarcascade_frontalcatface_...]
+    model_opencv_haarcascades_haarcascade_frontalface_alt_xml[haarcascade_frontalface_alt...]
+    model_opencv_haarcascades_haarcascade_frontalface_alt2_xml[haarcascade_frontalface_alt...]
+    model_opencv_haarcascades_haarcascade_frontalface_default_xml[haarcascade_frontalface_def...]
+    model_opencv_haarcascades_haarcascade_fullbody_xml[haarcascade_fullbody.xml]
+    model_opencv_haarcascades_haarcascade_lefteye_2splits_xml[haarcascade_lefteye_2splits...]
+    model_opencv_haarcascades_haarcascade_licence_plate_rus_16stages_xml[haarcascade_licence_plate_r...]
+    server_util_py --> server_wavelet_py
+    server_server_py --> server_util_py
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px

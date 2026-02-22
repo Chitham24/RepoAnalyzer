@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "repo_name": "Twilio_Whatsapp_Bot",
+    "owner": "Chitham24",
+    "branch": "main",
+    "description": "This project is a Flask-based automation tool that uses Twilio's WhatsApp API to send personalized messages, track user responses, and send follow-up reminders if users don’t respond within 24 hours.",
+    "language": "Python",
+    "stars": 0
+  },
+  "overview": {
+    "purpose": null,
+    "architecture": null,
+    "summary": "Error generating architecture summary: Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]"
+  },
+  "tech_stack": {
+    "languages": [
+      {
+        "language": "Python",
+        "files": 6,
+        "lines": 217,
+        "percentage": 85.71
+      },
+      {
+        "language": "Markdown",
+        "files": 1,
+        "lines": 63,
+        "percentage": 14.29
+      }
+    ],
+    "frameworks": [
+      "Flask"
+    ],
+    "databases": [
+      "Redis"
+    ],
+    "infrastructure": [],
+    "primary_language": "Python",
+    "total_files": 7
+  },
+  "structure": {
+    "folders": [],
+    "folder_summaries": [],
+    "total_folders": 0
+  },
+  "entry_points": {
+    "application_files": [
+      {
+        "path": "main.py",
+        "type": "Python",
+        "filename": "main.py"
+      }
+    ],
+    "framework_entrypoints": [
+      {
+        "path": "server.py",
+        "framework": "Flask"
+      }
+    ],
+    "docker_entrypoints": [],
+    "total_entrypoints": 2
+  },
+  "execution_flow": {
+    "description": "Error generating execution flow summary: Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: \"API_KEY_INVALID\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"generativelanguage.googleapis.com\"\n}\n, locale: \"en-US\"\nmessage: \"API key not valid. Please pass a valid API key.\"\n]",
+    "entry_point": null,
+    "request_flow": null,
+    "key_interactions": null,
+    "stages": [
+      {
+        "id": "entry",
+        "type": "entry_point",
+        "components": [
+          "main.py",
+          "server.py"
+        ],
+        "description": "Application entry points"
+      },
+      {
+        "id": "database",
+        "type": "database",
+        "components": [
+          "Redis"
+        ],
+        "description": "Data persistence layer"
+      },
+      {
+        "id": "external",
+        "type": "external_services",
+        "components": [
+          "Redis (caching/queue)"
+        ],
+        "description": "External services and infrastructure"
+      }
+    ],
+    "connections": [
+      {
+        "from": "entry",
+        "to": "database",
+        "label": "Data operations"
+      }
+    ]
+  },
+  "dependencies": {
+    "graph": {
+      "nodes": [
+        "README.md",
+        "llm.py",
+        "logger.py",
+        "main.py",
+        "message_log.txt",
+        "requirements.txt",
+        "server.py",
+        "tracker.py",
+        "utils.py"
+      ],
+      "edges": {
+        "main.py": [
+          "utils.py"
+        ],
+        "server.py": [
+          "logger.py",
+          "tracker.py"
+        ],
+        "tracker.py": [
+          "logger.py"
+        ],
+        "utils.py": [
+          "llm.py",
+          "tracker.py"
+        ]
+      }
+    },
+    "total_nodes": 9,
+    "total_edges": 6
+  },
+  "key_insights": {
+    "architecture_pattern": "Modular application",
+    "tech_choices": null,
+    "key_modules": null
+  },
+  "file_summaries": [],
+  "diagrams": {
+    "dependency_diagram": "graph TD\n    README_md[README.md]\n    llm_py[llm.py]\n    logger_py[logger.py]\n    main_py[main.py]\n    message_log_txt[message_log.txt]\n    requirements_txt[requirements.txt]\n    server_py[server.py]\n    tracker_py[tracker.py]\n    utils_py[utils.py]\n    main_py --> utils_py\n    server_py --> logger_py\n    server_py --> tracker_py\n    tracker_py --> logger_py\n    utils_py --> llm_py\n    utils_py --> tracker_py\n\n    classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px",
+    "flow_diagram": "graph LR\n    entry[\"Application entry points\"]\n    database[\"Data persistence layer\"]\n    external[\"External services and infrastructure\"]\n    entry -->|Data operations| database\n\n    style entry fill:#e1f5e1,stroke:#4caf50,stroke-width:3px\n    style database fill:#fce4ec,stroke:#e91e63,stroke-width:2px\n    style external fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px",
+    "module_diagram": "graph TD\n    Empty[No modules detected]"
+  }
+}
