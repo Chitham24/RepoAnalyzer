@@ -4,9 +4,6 @@ RepoAnalyzer is a modular tool that analyzes public GitHub repositories
 and generates structured, easy‑to‑read reports with architecture
 summaries, dependency insights, and visual diagrams.
 
-It is designed for **quick understanding, demos, and visualization**,
-not production auditing.
-
 ------------------------------------------------------------------------
 
 ## Overview
@@ -40,8 +37,7 @@ Final Report
 -   Execution flow
 -   Module structure
 
-Diagrams are saved as `.mmd` files and can be reused in documentation or
-diagram tools.
+Diagrams are saved as `.mmd` files.
 
 ### Flexible LLM Support
 
@@ -80,9 +76,6 @@ After running an analysis:
         │   └── execution_flow.mmd
         └── metadata.json
 
-Notes: - Mermaid diagrams are stored as reusable `.mmd` files. -
-Markdown output renders cleanly on GitHub.
-
 ------------------------------------------------------------------------
 
 ## Project Structure
@@ -103,7 +96,7 @@ Markdown output renders cleanly on GitHub.
 
 ### 1. Install Dependencies
 
-Install required packages (including Streamlit).
+Install required packages.
 
 ### 2. Configure Environment Variables
 
@@ -149,22 +142,14 @@ output - Saved artifacts under `outputs/<repo_name>/`
 
 -   Reduce `LLM_MAX_TOKENS`
 -   Lower `LLM_TEMPERATURE`
--   Use structured prompts with minimal fluff
 
 ------------------------------------------------------------------------
 
 ## Limitations
 
--   Not a production security scanner or audit tool
 -   Summary quality depends on model and prompts
 -   Large repositories may require file limits for performance and
     readability
 -   GitHub API rate limits may apply without authentication
 
 ------------------------------------------------------------------------
-
-## Purpose
-
-RepoAnalyzer helps developers quickly understand unfamiliar repositories
-by combining static analysis with LLM‑generated explanations and visual
-diagrams.
